@@ -47,3 +47,14 @@ a {
   height: 50px;
   width: 100%;
 }
+.arrow-hoover {
+  height: 50px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.fas {
+  display: none;
+}
