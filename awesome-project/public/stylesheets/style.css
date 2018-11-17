@@ -1,27 +1,25 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  color: #d8c9b6;
-}
+  color: #d8c9b6; }
 
 a {
-  color: #00b7ff;
-}
+  color: #00b7ff; }
+
 header {
   display: flex;
-  justify-content: space-between;
-  // flex-direction: row;
-}
+  justify-content: space-between; }
+
 .connexion-wishlist {
   display: flex;
   justify-content: space-around;
   border: 1px solid black;
-  width: 300px;
-}
+  width: 300px; }
+
 a {
   text-decoration: none;
-  color: #d8c9b6;
-}
+  color: #d8c9b6; }
+
 .title {
   display: flex;
   flex-direction: wrap;
@@ -29,21 +27,22 @@ a {
   align-items: center;
   height: 50px;
   width: 150px;
-  background-image: url("../images/Group\ 34.png");
+  background-image: url("../images/Group 34.png");
   background-repeat: no-repeat;
-  border: 1px solid black;
-}
+  border: 1px solid black; }
+
 .title h1 {
-  font-size: 80px;
-}
+  font-size: 80px; }
+
 .sub-header {
   display: flex;
-  justify-content: space-around;
-}
+  justify-content: space-around; }
+
 .title-container {
   border: 1px solid black;
   display: flex;
   justify-content: center;
   height: 50px;
-  width: 100%;
-}
+  width: 100%; }
+
+/*# sourceMappingURL=style.css.map */
