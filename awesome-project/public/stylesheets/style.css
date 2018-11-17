@@ -1,3 +1,16 @@
+@font-face {
+  font-family: "Palatino";
+  src: url("../fonts/Palatino.ttc") format("ttc");
+  font-weight: normal;
+  font-style: normal; }
+
+h4 {
+  font-family: "Palatino", sans-serif;
+  font-size: 3em; }
+
+* {
+  font-family: "Palatino"; }
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -45,21 +58,33 @@ a {
   height: 50px;
   width: 100%; }
 
-.arrow-hover {
+.arrow-hover1,
+.arrow-hover2 {
   height: 150px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center; }
 
-.arrow {
+.arrow1,
+.arrow2,
+.arrow3,
+.arrow4 {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border: 1px solid black;
   height: 200px;
   width: 150px;
   display: none; }
+
+.arrow-hover3 {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
 
 hr {
   width: 150px; }
