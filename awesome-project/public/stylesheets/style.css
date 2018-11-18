@@ -16,17 +16,23 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   color: #d8c9b6; }
 
+.big-header {
+  background-color: #061042; }
+
 a {
   color: #00b7ff; }
 
 header {
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  background-color: #061042;
+  padding-top: 20px;
+  margin-bottom: 15px; }
 
 .connexion-wishlist {
+  padding-top: 7px;
   display: flex;
   justify-content: space-around;
-  border: 1px solid black;
   width: 300px; }
 
 a {
@@ -41,8 +47,7 @@ a {
   height: 50px;
   width: 150px;
   background-image: url("../images/Group 34.png");
-  background-repeat: no-repeat;
-  border: 1px solid black; }
+  background-repeat: no-repeat; }
 
 .title h1 {
   font-size: 80px; }
@@ -51,14 +56,16 @@ a {
   display: flex;
   justify-content: space-around;
   height: 200px;
-  margin-top: 30px; }
+  margin-top: 30px;
+  margin-bottom: 0;
+  background-color: #061042; }
 
 .title-container {
-  border: 1px solid black;
   display: flex;
   justify-content: center;
   height: 50px;
-  width: 100%; }
+  width: 100%;
+  background-color: #061042; }
 
 .arrow-hover1,
 .arrow-hover2 {
@@ -77,8 +84,7 @@ a {
   align-items: center;
   justify-content: flex-start;
   height: 200px;
-  width: 150px;
-  display: none; }
+  width: 150px; }
 
 .arrow-hover3 {
   height: 200px;
@@ -91,10 +97,10 @@ hr {
   width: 150px; }
 
 footer {
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  background-color: #061042; }
 
 .top-footer {
   display: flex;
@@ -107,11 +113,121 @@ footer {
   justify-content: space-around; }
 
 .end-footer {
-  border: 1px solid black;
   text-align: center; }
 
 .middle-second-bottom {
   display: flex;
   justify-content: space-around; }
+
+.brand-name-footer {
+  display: flex;
+  flex-direction: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 150px;
+  background-image: url("../images/footer-apala-img.png");
+  background-repeat: no-repeat; }
+
+.index-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+.newProducts-intro-title {
+  display: flex;
+  justify-content: center;
+  color: #48433c; }
+
+.newProducts-intro-filters {
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+  height: 80%;
+  color: #6e5c45; }
+
+.newProducts-intro-pictures {
+  margin-top: 30px;
+  margin-bottom: 70px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 300px; }
+
+.newProducts-intro-welcome-message {
+  display: flex;
+  justify-content: center;
+  text-align: center; }
+
+.newProducts-intro-catch-phrase {
+  display: flex;
+  justify-content: center;
+  color: #6e5c45; }
+
+.filter-all {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.filter-all p {
+  margin: 0; }
+
+.image-index {
+  width: 23%;
+  border: 1px solid black; }
+
+.hr-index {
+  width: 500px; }
+
+.block-insta-and-newsletter-form {
+  margin-top: 50px;
+  width: 100%;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: #48433c; }
+
+.ista-post-img {
+  width: 500px;
+  height: 100px;
+  border: 1px solid black; }
+
+.newProducts-intro-welcome-message h2 {
+  color: #48433c; }
+
+.scroll-up {
+  margin-top: 60px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center; }
+
+.scroll-up p {
+  margin: 0; }
+
+.man-woman-img {
+  margin-top: 0;
+  background-image: url("../images/background-image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 600px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.box {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.49);
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 /*# sourceMappingURL=style.css.map */
