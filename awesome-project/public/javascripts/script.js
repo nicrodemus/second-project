@@ -15,8 +15,12 @@ document.addEventListener(
 // document.getElementsByClassName("arrow-hover").onmouseover = function() {
 //   document.getElementsByClassName("arrow").style.display = "flex";
 // };
-var arrowHover = document.querySelectorAll(".arrow-hover");
+// var arrowHover = document.querySelectorAll(".arrow-hover");
 
-function display() {
-  document.getElementsByClassName("arrow").style.display = flex;
+// // function display() {
+// //   document.getElementsByClassName("arrow").style.display = flex;
+// // }
+function myFunction() {
+  var x = document.querySelectorAll(".arrow");
+  x[2].style.display = "flex";
 }
