@@ -1,0 +1,101 @@
+<div class=" man-woman-img">
+    <div class="box">
+
+        <h1> </h1>
+
+    </div>
+
+
+</div>
+
+<div class="filter-sort">
+    <div class="filter">
+        <div class="filter-button">
+            <p>FILTER par</p>
+            <p> nouveautes</p>
+            <i class="fas fa-sort-down"></i>
+        </div>
+
+    </div>
+    <div class="sort">
+
+        <div class="sort-button">
+            <p>TREIER par</p>
+            <p> nouveatues</p>
+            <i class="fas fa-sort-down"></i>
+        </div>
+    </div>
+
+</div>
+
+<div class="display-filter-man">
+    <div class="filter-category-man">
+        <p>CATEGORIES</p>
+        <hr>
+
+        <p>Bracelets</p>
+
+        <p>Sautoirs</p>
+        <p>Sets</p>
+
+    </div>
+    <div class="filter-collections-man">
+        <p>COLLECTIONS</p>
+        <hr>
+        <p>Lucky Medals</p>
+        <p>Buddah</p>
+        <p>Instinct</p>
+        <p>Precieux</p>
+        <p>Mini</p>
+        <p>Apache</p>
+    </div>
+    <div class="filter-price-man">
+        <p>Prix</p>
+        <hr>
+        <p>DE 25€ à 50€</p>
+        <p>De 50€ à 100€</p>
+        <p>De 100€ à 200€</p>
+        <p>Plus de 200€</p>
+    </div>
+    <div class="filter-pierre-man">
+        <p>Pierres</p>
+        <hr>
+        <p>Agate</p>
+        <p>Amazonite</p>
+        <p>Jade</p>
+        <p>Jaspe</p>
+        <p>Onyx</p>
+    </div>
+    <div class="filter-color-man">
+        <p>Couleurs</p>
+        <hr>
+        <p>Bleu</p>
+        <p>Noir</p>
+        <p>Blanc</p>
+
+    </div>
+
+</div>
+<div class="display-sort-man">
+    <div class="display-sort-man-content">
+        <p>Nouveautés</p>
+        <p>prix</p>
+    </div>
+
+</div>
+
+<div class="grid-product-man">
+
+
+    {{!-- <ul> --}}
+        {{#each productArray}}
+        <div class="product-index0">
+            <img class="product-img-index0" src="../images/{{this.pictures.[0]}}">
+            <a href="/product/{{this._id}}">{{this.productName}} </a>
+            <p>{{this.price}}</p>
+            <i class="far fa-heart"></i>
+
+        </div>
+        {{/each }}
+    </ul>
+</div>

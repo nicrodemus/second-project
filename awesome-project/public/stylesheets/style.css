@@ -12,7 +12,6 @@ h4 {
   font-family: "Palatino"; }
 
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   color: #d8c9b6; }
 
@@ -57,8 +56,7 @@ a {
   justify-content: space-around;
   height: 200px;
   margin-top: 30px;
-  margin-bottom: 0;
-  background-color: #061042; }
+  margin-bottom: 0; }
 
 .title-container {
   display: flex;
@@ -84,7 +82,11 @@ a {
   align-items: center;
   justify-content: flex-start;
   height: 200px;
-  width: 150px; }
+  width: 150px;
+  display: none; }
+
+.show {
+  display: flex; }
 
 .arrow-hover3 {
   height: 200px;
@@ -283,25 +285,107 @@ footer {
   justify-content: flex-end;
   width: 80%; }
 
-.grid-product-man {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  padding: 5px; }
+.grid-price {
+  display: flex;
+  font-size: 20px;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  display: block; }
+
+.grid-price p,
+.grid-price i {
+  margin: 8px;
+  margin-left: 15px; }
 
 .z {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 60px;
-  font-size: 30px;
-  text-align: center;
+  height: 200px;
+  width: 100%;
+  object-fit: cover; }
+
+.product-img-index0 {
+  width: 320px;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.grid-product-man {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-gap: 2px;
+  flex-wrap: wrap;
+  border: 1px solid black; }
+
+.retour {
+  margin: 30px 0 30px 0; }
+
+.product-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 30px; }
+
+.three-images-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; }
+
+.image-section-display {
+  width: 400px;
   height: 400px; }
 
-.grid-image {
-  background-image: url("../images/IMG_1641.JPG");
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: 1px solid black;
-  height: 300px;
-  width: 500px; }
+.three-images-section-display {
+  width: 120px;
+  height: 125px; }
+
+.description-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  width: 400px; }
+
+.productItem-productName {
+  text-align: left; }
+
+.productItem-price {
+  font-size: 48px; }
+
+.ajouter {
+  height: 100px;
+  width: 250;
+  font-size: 18px; }
+
+.hr-section {
+  width: 1100px;
+  margin-bottom: 50px; }
+
+.section-pierres {
+  text-align: center;
+  color: #48433c;
+  margin-bottom: 50px; }
+
+.div-pierre-display {
+  display: flex;
+  justify-content: center; }
+
+.section-pierres-names {
+  width: 50%;
+  display: flex;
+  text-align: center;
+  justify-content: space-around; }
+
+.this-stones {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 1px solid black; }
+
+.this {
+  margin: 60px;
+  display: flex;
+  justify-content: space-around; }
 
 /*# sourceMappingURL=style.css.map */

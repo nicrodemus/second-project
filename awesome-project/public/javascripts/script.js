@@ -20,7 +20,28 @@ document.addEventListener(
 // // function display() {
 // //   document.getElementsByClassName("arrow").style.display = flex;
 // // }
-function myFunction() {
-  var x = document.querySelectorAll(".arrow");
-  x[2].style.display = "flex";
-}
+// function myFunction() {
+//   const element = document.getElementById("b");
+//   element.classList.toggle("show");
+// }
+var button = document.getElementById("a");
+
+button.onclick = function() {
+  var div = document.getElementById("b");
+  if (div.style.display !== "none") {
+    div.style.display = "none";
+  } else {
+    div.style.display = "flex";
+  }
+};
+
+var button = document.getElementById("c");
+
+button.onclick = function() {
+  var div = document.getElementById("d");
+  if (div.style.display !== "none") {
+    div.style.display = "none";
+  } else {
+    div.style.display = "flex";
+  }
+};
