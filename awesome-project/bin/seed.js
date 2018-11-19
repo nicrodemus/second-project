@@ -32,8 +32,7 @@ const productData = [
         img: [
           "../images/amethyste.png",
           "../images/jade.png",
-          "../images/jaspe.png",
-          ""
+          "../images/jaspe.png"
         ]
       }
     ],
@@ -52,11 +51,7 @@ const productData = [
     stones: [
       { name: ["ruby", "turquoise"] },
       {
-        img: [
-          "../images/amethyste.png",
-          "../images/jade.png",
-          "../images/jaspe.png"
-        ]
+        img: ["../images/amethyste.png", "../images/jade.png"]
       }
     ],
     gender: "male",

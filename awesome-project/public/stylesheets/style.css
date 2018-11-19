@@ -367,10 +367,6 @@ footer {
   color: #48433c;
   margin-bottom: 50px; }
 
-.div-pierre-display {
-  display: flex;
-  justify-content: center; }
-
 .section-pierres-names {
   width: 50%;
   display: flex;
@@ -380,12 +376,21 @@ footer {
 .this-stones {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  border: 1px solid black; }
+  justify-content: space-around; }
 
 .this {
   margin: 60px;
   display: flex;
+  justify-content: space-around; }
+
+.this-picture-stones {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+
+.a {
+  display: flex;
+  flex-direction: row;
   justify-content: space-around; }
 
 /*# sourceMappingURL=style.css.map */
