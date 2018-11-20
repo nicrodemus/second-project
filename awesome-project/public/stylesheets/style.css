@@ -267,7 +267,6 @@ footer {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid black;
   width: 250px; }
 
 .filter {
@@ -275,7 +274,6 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  border: 1px solid black;
   width: 200px; }
 
 .filter-button {
@@ -283,7 +281,6 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  border: 1px solid black;
   width: 200px; }
 
 .sort-button {
@@ -291,7 +288,6 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  border: 1px solid black;
   width: 200px; }
 
 .display-filter-man {
@@ -305,7 +301,8 @@ footer {
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-end;
-  width: 80%; }
+  width: 80%;
+  display: none; }
 
 .grid-price {
   display: flex;
@@ -414,5 +411,26 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-around; }
+
+.sign-up-div {
+  display: flex;
+  flex-direction: column;
+  color: #48433c;
+  text-align: center; }
+
+.sign-up-structure {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 600px; }
+
+.sig {
+  height: 70px; }
+
+.input {
+  height: 40px;
+  width: 300px;
+  border-radius: 25px; }
 
 /*# sourceMappingURL=style.css.map */

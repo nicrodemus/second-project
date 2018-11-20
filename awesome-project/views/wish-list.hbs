@@ -1,3 +1,17 @@
-<h1>
-    HERE YOUR wishLIst
-</h1>
+{{#if currentUser}}
+<h2>
+    WELCOME BACK NAME{{currentUser.preNom}}
+
+</h2>
+{{#each products }}
+<div class="big-wish-container">
+
+    <p>{{this.price}}</p>
+
+
+</div>
+{{/each}}
+
+{{else}}
+<h1>Sorry you Must be Logged before seeing your wishList</h1>
+{{/if}}

@@ -1,6 +1,9 @@
 const express = require("express");
 const router = express.Router();
+const User = require("../models/user-model.js");
 const Product = require("../models/product-model.js");
+const bcrypt = require("bcrypt");
+const passport = require("passport");
 //------------------------------------- HEADER ROUTER -------------------------------------------///////////////////////
 /* GET home page */
 router.get("/", (req, res, next) => {
@@ -14,9 +17,7 @@ router.get("/connexion", (req, res, next) => {
 router.get("/wishList", (req, res, next) => {
   res.render("wish-list.hbs");
 });
-router.get("/signup", (req, res, next) => {
-  res.render("sign-up.hbs");
-});
+
 //-----------------------------------maison apala----------------------------------------------/////////////
 
 ////////////////////////------------------------ HOMME ROUTER----------------------------/////////////////////////////
@@ -65,7 +66,7 @@ module.exports = router;
 ///////////////////////////////////////////////////     test------------------------------------------////////////////////
 
 router.get("/homme/collection", (req, res, next) => {
-  Product.find()
+  Product.find({ gender: { $eq: "male" } })
     .then(productResults => {
       res.locals.productArray = productResults;
       res.render("template.hbs");
@@ -86,7 +87,7 @@ router.get("/homme/bracelets", (req, res, next) => {
     .catch(err => next(err));
 });
 router.get("/homme/sautoir", (req, res, next) => {
-  Product.find({ typeOfProduct: { $eq: "sautoir" } })
+  Product.find({ typeOfProduct: { $eq: "sautoir" }, gender: { $eq: "male" } })
     .then(productResults => {
       res.locals.productArray = productResults;
       res.render("template.hbs");
@@ -95,14 +96,16 @@ router.get("/homme/sautoir", (req, res, next) => {
 });
 
 router.get("/homme/costum", (req, res, next) => {
-  res.render("template.bhs");
+  res.render("template.hbs");
 });
 //////////---------------------------------------- FEMME ROUTER-----------------------------//////////////////////////
 router.get("/femme/collection", (req, res, next) => {
-  res.render("template.hbs");
-  // request to your database homme collection
-  // Get the response, store it into res.locals.collection
-  //render the collection.hbs
+  Product.find({ gender: { $eq: "female" } })
+    .then(productResults => {
+      res.locals.productArray = productResults;
+      res.render("template.hbs");
+    })
+    .catch(err => next(err));
 });
 router.get("/femme/bracelets", (req, res, next) => {
   res.render("template.hbs");
@@ -116,12 +119,105 @@ router.get("/femme/costum", (req, res, next) => {
 router.get("/femme/rasDuCol", (req, res, next) => {
   res.render("template.hbs");
 });
+
+//----------------------  product Routes------------------------------------//
 router.get("/product/:productId", (req, res, next) => {
   const { productId } = req.params;
   Product.findById(productId)
     .then(productDoc => {
       res.locals.productItem = productDoc;
       res.render("product.hbs");
+    })
+    .catch(err => next(err));
+});
+
+///////////////////////// user ROUTER------------------------------------------------///////////////////////////////////
+router.get("/signup", (req, res, next) => {
+  res.render("sign-up.hbs");
+});
+
+router.post("/process-signup", (req, res, next) => {
+  const {
+    preNom,
+    nom,
+    adresse,
+    codePostal,
+    pays,
+    eMail,
+    originalPassword
+  } = req.body;
+  if (!originalPassword || originalPassword.match(/[0-9]/) === null) {
+    res.redirect("/signup");
+    return;
+  }
+  const encryptedPassword = bcrypt.hashSync(originalPassword, 10);
+  User.create({
+    preNom,
+    nom,
+    adresse,
+    codePostal,
+    pays,
+    eMail,
+    encryptedPassword
+  })
+    .then(userDoc => {
+      res.redirect("/");
+    })
+    .catch(err => next(err));
+});
+
+router.post("/process-login", (req, res, next) => {
+  const { eMail, originalPassword } = req.body;
+  console.log(eMail, originalPassword);
+  User.findOne({ eMail: { $eq: eMail } })
+    .then(userDoc => {
+      console.log(userDoc);
+      if (!userDoc) {
+        res.redirect("/femme/collection");
+        return;
+      } else {
+        req.logIn(userDoc, () => {
+          res.redirect("/");
+        });
+      }
+      const { encryptedPassword } = userDoc;
+      if (!bcrypt.compareSync(originalPassword, encryptedPassword)) {
+        res.redirect("/signup");
+      } else {
+        req.logIn(userDoc, () => {
+          res.redirect("/");
+        });
+      }
+    })
+    .catch(err => next(err));
+});
+router.get("/logout", (req, res, next) => {
+  req.logout();
+
+  res.redirect("/");
+});
+
+//-----------------------  wishLIst routes-------------------------------////////////////
+router.get("/wishlist-add/:productId", (req, res, next) => {
+  const user = req.user._id;
+  const { productId } = req.params;
+  User.findByIdAndUpdate(
+    user,
+    { $push: { favourites: productId } },
+    { runValidators: true }
+  )
+    .then(userDoc => {
+      let favourites = userDoc.favourites;
+
+      Promise.all(favourites.map(id => Product.findById(id)))
+        .then(products => {
+          // res.send(products);
+          res.locals.products = products;
+          res.render("wish-list.hbs");
+        })
+        .catch(err => {
+          throw err;
+        });
     })
     .catch(err => next(err));
 });

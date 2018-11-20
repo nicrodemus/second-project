@@ -314,7 +314,7 @@ footer {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid black;
+  // border: 1px solid black;
   width: 250px;
 }
 .filter {
@@ -322,7 +322,7 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  border: 1px solid black;
+  // border: 1px solid black;
   width: 200px;
 }
 .filter-button {
@@ -330,7 +330,7 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  border: 1px solid black;
+  // border: 1px solid black;
   width: 200px;
 }
 .sort-button {
@@ -338,7 +338,7 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  border: 1px solid black;
+  // border: 1px solid black;
   width: 200px;
 }
 .display-filter-man {
@@ -354,32 +354,8 @@ footer {
   justify-content: flex-end;
 
   width: 80%;
-  //  display: none;
+  display: none;
 }
-// .grid-product-man {
-//   max-width: 960px;
-//   display: grid;
-//   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-//   grid-gap: 29px;
-// }
-// .z {
-//   background-color: rgba(255, 255, 255, 0.8);
-//   // border: 1px solid rgba(0, 0, 0, 0.8);
-//   font-size: 30px;
-//   text-align: center;
-//   height: 400px;
-//   margin: 4px;
-// }
-// .grid-image {
-//   background-image: url("../images/IMG_1641.JPG");
-//   background-repeat: no-repeat;
-//   background-size: contain;
-//   // border: 1px solid black;
-//   height: 300px;
-//   width: 300px;
-//   position: relative;
-//   display: block;
-// }
 
 .grid-price {
   display: flex;
@@ -500,4 +476,28 @@ footer {
   flex-direction: row;
   justify-content: space-around;
   // border: 1px solid black;
+}
+
+/////--------------------------------- sign-up Layout//////////-----------------------------
+.sign-up-div {
+  display: flex;
+  flex-direction: column;
+  color: #48433c;
+  // border: 1px solid black;
+  text-align: center;
+}
+.sign-up-structure {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 600px;
+}
+.sig {
+  height: 70px;
+}
+.input {
+  height: 40px;
+  width: 300px;
+  border-radius: 25px;
 }

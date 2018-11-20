@@ -21,7 +21,7 @@
             <form action="/process-login" method="POST">
               <label>
                 Email:
-                <input type="email" name="email" placeholder="gfcgk@rfgh.com">
+                <input type="email" name="eMail" placeholder="gfcgk@rfgh.com">
               </label>
               <br><label>Password:
                 <input type="password" name="originalPassword" placeholder="it's a secret">
@@ -35,6 +35,10 @@
 
           </div>
         </div>
+        {{#if currentUser}}
+        <h2>{{currentUser.preNom}}</h2>
+        <a href="/logout">Log Out</a>
+        {{/if}}
         <a href="/wishList"><i class="far fa-heart"></i>
         </a>
       </div>
