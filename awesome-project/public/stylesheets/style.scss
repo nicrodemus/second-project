@@ -32,13 +32,41 @@ header {
   margin-bottom: 15px;
   // flex-direction: row;
 }
+
+.connexion-form {
+  // border: 1px solid black;
+  flex-direction: column;
+}
+.login-form {
+  // border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: center;
+  height: 60px;
+  z-index: 111;
+  display: none;
+}
 .connexion-wishlist {
   padding-top: 7px;
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
 
-  width: 300px;
+  width: 200px;
+  margin-right: 25px;
 }
+
+.button-or-sign {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+  align-items: center;
+  justify-content: space-around;
+  height: 20px;
+}
+
 a {
   text-decoration: none;
   color: #d8c9b6;
@@ -50,6 +78,7 @@ a {
   align-items: center;
   height: 50px;
   width: 150px;
+
   background-image: url("../images/Group\ 34.png");
   background-repeat: no-repeat;
 }
@@ -60,16 +89,16 @@ a {
   display: flex;
   justify-content: space-around;
 
-  height: 200px;
+  height: 50px;
   margin-top: 30px;
   margin-bottom: 0;
   // background-color: #061042;
 }
 .title-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   height: 50px;
-  width: 100%;
+  width: 55%;
   background-color: #061042;
 }
 .arrow-hover1,
@@ -85,19 +114,19 @@ a {
 .arrow2,
 .arrow3,
 .arrow4 {
+  z-index: 11;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: flex-end;
+  background-color: rgba(6, 16, 66, 0.7);
 
-  height: 200px;
+  height: 300px;
   width: 150px;
 
   display: none;
 }
-.show {
-  display: flex;
-}
+
 .arrow-hover3 {
   height: 200px;
   // border: 1px solid black;

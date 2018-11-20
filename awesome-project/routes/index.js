@@ -14,6 +14,9 @@ router.get("/connexion", (req, res, next) => {
 router.get("/wishList", (req, res, next) => {
   res.render("wish-list.hbs");
 });
+router.get("/signup", (req, res, next) => {
+  res.render("sign-up.hbs");
+});
 //-----------------------------------maison apala----------------------------------------------/////////////
 
 ////////////////////////------------------------ HOMME ROUTER----------------------------/////////////////////////////

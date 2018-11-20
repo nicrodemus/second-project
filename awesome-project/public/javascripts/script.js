@@ -45,3 +45,13 @@ button.onclick = function() {
     div.style.display = "flex";
   }
 };
+var button = document.getElementById("connexion");
+
+button.onclick = function() {
+  var div = document.getElementById("login");
+  if (div.style.display !== "none") {
+    div.style.display = "none";
+  } else {
+    div.style.display = "flex";
+  }
+};

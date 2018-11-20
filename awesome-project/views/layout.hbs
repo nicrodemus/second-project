@@ -15,10 +15,30 @@
     <header>
       <div class="language-div"><a href=""> 🇫🇷Francais</a></div>
       <div class="connexion-wishlist">
-        <a href="/connexion">Connexion</a>
+        <div class="connexion-form">
+          <p id="connexion" href="/connexion">Connexion</p>
+          <div class="login-form" id="login">
+            <form action="/process-login" method="POST">
+              <label>
+                Email:
+                <input type="email" name="email" placeholder="gfcgk@rfgh.com">
+              </label>
+              <br><label>Password:
+                <input type="password" name="originalPassword" placeholder="it's a secret">
+              </label>
+              <br>
+              <div class="button-or-sign"><button>Log In</button>
+                <p>or</p> <a href="/signup">Sign Up</a>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
         <a href="/wishList"><i class="far fa-heart"></i>
         </a>
       </div>
+
 
 
 
@@ -32,16 +52,9 @@
     <div class="sub-header">
       <div class="arrow-hover arrow-hover1">
         <a class="" href="/">maison apala</a>
-        <div class="arrow arrow1"><i class="fas fa-sort-up"></i> <a href="">Collection</a>
-          <hr><a href="">Bracelets</a>
-          <hr>
-          <a href="">Sautoir</a>
-          <hr>
-          <a href="">Costum</a>
 
-
-        </div>
       </div>
+
       <div class="arrow-hover arrow-hover2">
         <p href="" id="a"> homme</p>
         <div class=" arrow arrow2" id="b"> <i class="fas fa-sort-up"></i>
