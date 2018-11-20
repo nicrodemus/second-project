@@ -88,10 +88,12 @@
 <div class="grid-product-man">
 
 
+
+
     {{!-- <ul> --}}
         {{#each productArray}}
         <div class="product-index0">
-            <img class="product-img-index0" src="../images/{{this.pictures.[0]}}">
+            <img class="product-img-index0" src="{{this.pictures.[0]}}">
             <a href="/product/{{this._id}}">{{this.productName}} </a>
             <p>{{this.price}}</p>
             <i class="far fa-heart"></i>

@@ -78,11 +78,22 @@ router.get("/homme/collection", (req, res, next) => {
 });
 
 router.get("/homme/bracelets", (req, res, next) => {
-  res.render("template.hbs");
+  Product.find({ typeOfProduct: { $eq: "bracelet" }, gender: { $eq: "male" } })
+    .then(productResults => {
+      res.locals.productArray = productResults;
+      res.render("template.hbs");
+    })
+    .catch(err => next(err));
 });
 router.get("/homme/sautoir", (req, res, next) => {
-  res.render("template.hbs");
+  Product.find({ typeOfProduct: { $eq: "sautoir" } })
+    .then(productResults => {
+      res.locals.productArray = productResults;
+      res.render("template.hbs");
+    })
+    .catch(err => next(err));
 });
+
 router.get("/homme/costum", (req, res, next) => {
   res.render("template.bhs");
 });
