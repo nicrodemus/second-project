@@ -71,6 +71,15 @@ router.get("/question", (req, res, next) => {
 });
 module.exports = router;
 
+router.get("/conditions-generales", (req, res, next) => {
+  res.render("general-conditions.hbs");
+});
+router.get("/legals", (req, res, next) => {
+  res.render("legals.hbs");
+});
+router.get("/contacts", (req, res, next) => {
+  res.render("contact.hbs");
+});
 ///////////////////////////////////////////////////     test------------------------------------------////////////////////
 
 router.get("/homme/collection", (req, res, next) => {
