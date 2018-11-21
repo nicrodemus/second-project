@@ -28,6 +28,14 @@ header {
   background-color: #061042;
   padding-top: 20px;
   margin-bottom: 15px; }
+  header .language-div {
+    margin-top: 20px; }
+
+.maison-apala {
+  margin-top: 15px; }
+
+.les-ephemeris {
+  margin-top: 30px; }
 
 .connexion-form {
   flex-direction: row;
@@ -85,6 +93,7 @@ a {
 .sub-header {
   display: flex;
   justify-content: space-around;
+  align-items: flex-start;
   height: 50px;
   margin-top: 30px;
   margin-bottom: 0; }
@@ -119,6 +128,12 @@ a {
   width: 150px;
   display: none; }
 
+.arrow-hover4 {
+  margin-top: 15px; }
+
+.arrow-hover4 .fas {
+  display: none; }
+
 .arrow-hover3 {
   height: 200px;
   display: flex;
@@ -126,6 +141,12 @@ a {
   justify-content: flex-start;
   align-items: center;
   cursor: pointer; }
+
+.arrow-hover5 {
+  margin-top: 15px; }
+
+.arrow-hover5 .fas {
+  display: none; }
 
 hr {
   width: 150px; }
@@ -140,7 +161,10 @@ footer {
 .top-footer {
   display: flex;
   flex-direction: row;
-  justify-content: space-around; }
+  justify-content: space-around;
+  margin-bottom: 60px;
+  height: 40px;
+  align-items: center; }
 
 .middle-footer {
   display: flex;

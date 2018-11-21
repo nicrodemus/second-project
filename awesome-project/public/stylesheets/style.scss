@@ -32,8 +32,18 @@ header {
   padding-top: 20px;
   margin-bottom: 15px;
   // flex-direction: row;
+  .language-div {
+    margin-top: 20px;
+  }
 }
-
+.maison-apala {
+  // border: 1px solid white;
+  margin-top: 15px;
+}
+.les-ephemeris {
+  // border: 1px solid white;
+  margin-top: 30px;
+}
 .connexion-form {
   // border: 1px solid white;
   flex-direction: row;
@@ -100,6 +110,7 @@ a {
 .sub-header {
   display: flex;
   justify-content: space-around;
+  align-items: flex-start;
 
   height: 50px;
   margin-top: 30px;
@@ -139,7 +150,13 @@ a {
 
   display: none;
 }
-
+.arrow-hover4 {
+  margin-top: 15px;
+  // border: 1px solid white;
+}
+.arrow-hover4 .fas {
+  display: none;
+}
 .arrow-hover3 {
   height: 200px;
   // border: 1px solid black;
@@ -148,6 +165,13 @@ a {
   justify-content: flex-start;
   align-items: center;
   cursor: pointer;
+}
+.arrow-hover5 {
+  margin-top: 15px;
+}
+
+.arrow-hover5 .fas {
+  display: none;
 }
 // .femme {
 //   justify-self: flex-start;
@@ -174,6 +198,10 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  // border: 1px solid white;
+  margin-bottom: 60px;
+  height: 40px;
+  align-items: center;
 }
 .middle-footer {
   display: flex;
@@ -428,7 +456,6 @@ footer {
 .image-section-display {
   width: 400px;
   height: 400px;
- 
 }
 #big1 {
   z-index: 1;
