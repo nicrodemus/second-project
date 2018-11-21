@@ -1,17 +1,29 @@
 {{#if currentUser}}
 <h2>
-    WELCOME BACK NAME{{currentUser.preNom}}
+    WELCOME BACK {{currentUser.preNom}}
 
 </h2>
-{{#each products }}
-<div class="big-wish-container">
+{{#each favourites }}
 
-    <p>{{this.price}}</p>
+<hr class="wish-list-hr" align="right">
+
+</div>
+<div class="big-wish-container">
+    <div class="wishlist-picture-box"><img class="wishlist-picture" src="{{this.pictures.[0]}}" alt="img"></div>
+    <div class="wishlist-information-box">
+        <h4>{{this.productName}}</h4>
+        <h4>{{this.price}}</h4>
+        <form action="/remove-product" method="GET">
+            <button class="retirer-button"> Retirer</button>
+
+        </form>
+    </div>
 
 
 </div>
 {{/each}}
 
 {{else}}
+<hr class="wish-list-hr">
 <h1>Sorry you Must be Logged before seeing your wishList</h1>
 {{/if}}

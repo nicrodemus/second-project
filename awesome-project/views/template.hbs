@@ -93,7 +93,8 @@
     {{!-- <ul> --}}
         {{#each productArray}}
         <div class="product-index0">
-            <img class="product-img-index0" src="{{this.pictures.[0]}}">
+            <a href="/product/{{this._id}}">
+                <img class="product-img-index0" src="{{this.pictures.[0]}}"></a>
             <a href="/product/{{this._id}}">{{this.productName}} </a>
             <p>{{this.price}}</p>
             <i class="far fa-heart"></i>

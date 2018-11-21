@@ -10,7 +10,7 @@ const userSchema = new Schema(
     pays: String,
     eMail: String,
     encryptedPassword: { type: String },
-    favourites: Array
+    favourites: [{ type: Schema.Types.ObjectId, ref: "Product" }]
   },
   {
     timestamps: true

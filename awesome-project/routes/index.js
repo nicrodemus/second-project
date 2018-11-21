@@ -14,8 +14,16 @@ router.get("/connexion", (req, res, next) => {
   res.render("connexion.hbs");
 });
 
-router.get("/wishList", (req, res, next) => {
-  res.render("wish-list.hbs");
+router.get("/wishList/:userId", (req, res, next) => {
+  const { userId } = req.params;
+  // const userId = req.params.userId
+  User.findById(userId)
+    .populate("favourites")
+    .then(userDoc => {
+      res.locals.favourites = userDoc.favourites;
+      res.render("wish-list.hbs");
+    })
+    .catch(err => next(err));
 });
 
 //-----------------------------------maison apala----------------------------------------------/////////////
@@ -108,16 +116,35 @@ router.get("/femme/collection", (req, res, next) => {
     .catch(err => next(err));
 });
 router.get("/femme/bracelets", (req, res, next) => {
-  res.render("template.hbs");
+  Product.find({
+    typeOfProduct: { $eq: "bracelet" },
+    gender: { $eq: "female" }
+  })
+    .then(productResults => {
+      res.locals.productArray = productResults;
+      res.render("template.hbs");
+    })
+    .catch(err => next(err));
 });
 router.get("/femme/sautoir", (req, res, next) => {
-  res.render("template.hbs");
+  Product.find({ typeOfProduct: { $eq: "sautoir" }, gender: { $eq: "female" } })
+    .then(productResults => {
+      res.locals.productArray = productResults;
+      res.render("template.hbs");
+    })
+    .catch(err => next(err));
 });
 router.get("/femme/costum", (req, res, next) => {
   res.render("template.hbs");
 });
+
 router.get("/femme/rasDuCol", (req, res, next) => {
-  res.render("template.hbs");
+  Product.find({ typeOfProduct: { $eq: "collier" }, gender: { $eq: "female" } })
+    .then(productResults => {
+      res.locals.productArray = productResults;
+      res.render("template.hbs");
+    })
+    .catch(err => next(err));
 });
 
 //----------------------  product Routes------------------------------------//
@@ -125,8 +152,15 @@ router.get("/product/:productId", (req, res, next) => {
   const { productId } = req.params;
   Product.findById(productId)
     .then(productDoc => {
-      res.locals.productItem = productDoc;
-      res.render("product.hbs");
+      User.findById(req.user._id)
+        .then(userDoc => {
+          res.locals.isNotInWishlist = !userDoc.favourites.some(oneId => {
+            return oneId.toString() === productId;
+          });
+          res.locals.productItem = productDoc;
+          res.render("product.hbs");
+        })
+        .catch(err => next(err));
     })
     .catch(err => next(err));
 });
@@ -207,17 +241,23 @@ router.get("/wishlist-add/:productId", (req, res, next) => {
     { runValidators: true }
   )
     .then(userDoc => {
-      let favourites = userDoc.favourites;
+      res.redirect("back");
+    })
+    .catch(err => next(err));
+});
 
-      Promise.all(favourites.map(id => Product.findById(id)))
-        .then(products => {
-          // res.send(products);
-          res.locals.products = products;
-          res.render("wish-list.hbs");
-        })
-        .catch(err => {
-          throw err;
-        });
+router.get("/whishlist-remove/:productId", (req, res, next) => {
+  const user = req.user._id;
+  const { productId } = req.params;
+  User.findByIdAndUpdate(
+    user,
+    { $pull: { favourites: productId } },
+    { runValidators: true }
+  )
+    .then(userDoc => {
+      // res.redirect(`/wishlist/${req.user._id}`);
+      // res.redirect(req.originalUrl);
+      res.redirect("back");
     })
     .catch(err => next(err));
 });

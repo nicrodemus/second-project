@@ -109,6 +109,7 @@ a {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  cursor: pointer;
 }
 .arrow1,
 .arrow2,
@@ -134,6 +135,7 @@ a {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  cursor: pointer;
 }
 // .femme {
 //   justify-self: flex-start;
@@ -382,6 +384,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .grid-product-man {
   max-width: 100%;
@@ -405,17 +408,34 @@ footer {
 .three-images-section {
   display: flex;
   flex-direction: column;
-
+  align-items: center;
   justify-content: space-around;
 }
 
 .image-section-display {
   width: 400px;
   height: 400px;
+  position: absolute;
+  left: 400px;
+}
+#big1 {
+  z-index: 1;
+  display: block;
+}
+#big2 {
+  z-index: 9;
+  display: none;
+}
+#big3 {
+  z-index: 8;
+  display: none;
 }
 .three-images-section-display {
   width: 120px;
   height: 125px;
+  cursor: pointer;
+
+  margin-top: 15px;
 }
 .description-section {
   display: flex;
@@ -433,8 +453,19 @@ footer {
 }
 .ajouter {
   height: 100px;
-  width: 250;
+  width: 350px;
   font-size: 18px;
+  border-radius: 30px;
+  background-color: #061042;
+  color: #d8c9b6;
+}
+.remove {
+  height: 100px;
+  width: 350px;
+  font-size: 18px;
+  border-radius: 30px;
+  background-color: #958e87;
+  color: white;
 }
 .hr-section {
   width: 1100px;
@@ -500,4 +531,36 @@ footer {
   height: 40px;
   width: 300px;
   border-radius: 25px;
+}
+//---------------------------------------------    wish-list section///////////////---------
+.big-wish-container {
+  display: flex;
+  flex-direction: row;
+  height: 400px;
+  justify-content: space-between;
+  // border: 1px solid black;
+  align-items: center;
+  margin-left: 50px;
+}
+.wishlist-information-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  // border: 1px solid black;
+  width: 800px;
+  height: 150px;
+}
+.wishlist-picture {
+  height: 300px;
+  width: 300px;
+}
+.wish-list-hr {
+  width: 1370px;
+}
+.retirer-button {
+  height: 39px;
+  width: 100px;
+  background-color: #958e87;
+  color: white;
 }

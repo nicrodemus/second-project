@@ -38,6 +38,17 @@ button.onclick = function() {
   }
 };
 
+var image = document.querySelectorAll(".three-images-section-display");
+console.log("images", image);
+var bigImage = document.querySelector(".image-section-display");
+console.log("bigimage", bigImage);
+
+image.forEach(oneImage => {
+  oneImage.onclick = () => {
+    bigImage.src = oneImage.src;
+  };
+});
+
 var button = document.getElementById("sort-arrow");
 button.onclick = function() {
   var div = document.getElementById("display-sort");
@@ -57,3 +68,8 @@ button.onclick = function() {
     div.style.display = "flex";
   }
 };
+
+// var click = document.querySelector(".ajouter")
+// click.onclick = function(){
+//   if()
+// }
