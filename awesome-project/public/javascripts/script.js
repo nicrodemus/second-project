@@ -6,35 +6,35 @@ document.addEventListener(
   false
 );
 /////------------------------ click function----------------------------/////
-var manArrow = document.getElementById("a");
+var button = document.getElementById("a");
 
-manArrow.onclick = function() {
-  var man = document.getElementById("b");
-  if (man.style.display !== "none") {
-    man.style.display = "none";
+button.onclick = function() {
+  var div = document.getElementById("b");
+  if (div.style.display !== "none") {
+    div.style.display = "none";
   } else {
-    man.style.display = "flex";
+    div.style.display = "flex";
   }
 };
 
-var womanArrow = document.getElementById("c");
+var button = document.getElementById("c");
 
-womanArrow.onclick = function() {
-  var woman = document.getElementById("d");
-  if (woman.style.display !== "none") {
-    woman.style.display = "none";
+button.onclick = function() {
+  var div = document.getElementById("d");
+  if (div.style.display !== "none") {
+    div.style.display = "none";
   } else {
-    woman.style.display = "flex";
+    div.style.display = "flex";
   }
 };
-var connection = document.getElementById("connexion");
+var button = document.getElementById("connexion");
 
-connection.onclick = function() {
-  var login = document.getElementById("login");
-  if (login.style.display !== "none") {
-    login.style.display = "none";
+button.onclick = function() {
+  var div = document.getElementById("login");
+  if (div.style.display !== "none") {
+    div.style.display = "none";
   } else {
-    login.style.display = "flex";
+    div.style.display = "flex";
   }
 };
 
@@ -49,22 +49,27 @@ image.forEach(oneImage => {
   };
 });
 
-// var arrow = document.querySelector("#sort-arrow");
-// var arrowDisplay = document.querySelector("#display-sort");
-// arrow.onclick = function() {
-//   if (arrowDisplay.style.display !== "none") {
-//     arrowDisplay.style.display = "none";
-//   } else {
-//     arrowDisplay.style.display = "flex";
-//   }
-// };
+var button = document.getElementById("sort-arrow");
+button.onclick = function() {
+  var div = document.getElementById("display-sort");
+  if (div.style.display !== "none") {
+    div.style.display = "none";
+  } else {
+    div.style.display = "flex";
+  }
+};
 
-// var button1 = document.querySelector("#filter-arrow");
-// button.onclick = function() {
-//   var div1 = document.getElementById("#display-filter");
-//   if (div1.style.display !== "none") {
-//     div1.style.display = "none";
-//   } else {
-//     div1.style.display = "flex";
-//   }
-// };
+var button = document.getElementById("filter-arrow");
+button.onclick = function() {
+  var div = document.getElementById("display-filter");
+  if (div.style.display !== "none") {
+    div.style.display = "none";
+  } else {
+    div.style.display = "flex";
+  }
+};
+
+// var click = document.querySelector(".ajouter")
+// click.onclick = function(){
+//   if()
+// }
