@@ -1,29 +1,32 @@
-{{#if currentUser}}
-<h2>
-    WELCOME BACK {{currentUser.preNom}}
+<section class="wish-list-session">
 
-</h2>
-{{#each favourites }}
+    {{#if currentUser}}
+    <h2>
+        WELCOME BACK {{currentUser.preNom}}
 
-<hr class="wish-list-hr" align="right">
+    </h2>
+    {{#each favourites }}
 
-</div>
-<div class="big-wish-container">
-    <div class="wishlist-picture-box"><img class="wishlist-picture" src="{{this.pictures.[0]}}" alt="img"></div>
-    <div class="wishlist-information-box">
-        <h4>{{this.productName}}</h4>
-        <h4>{{this.price}}</h4>
-        <form action="/remove-product" method="GET">
-            <button class="retirer-button"> Retirer</button>
+    <hr class="wish-list-hr" align="right">
 
-        </form>
     </div>
+    <div class="big-wish-container">
+        <div class="wishlist-picture-box"><img class="wishlist-picture" src="{{this.pictures.[0]}}" alt="img"></div>
+        <div class="wishlist-information-box">
+            <h4>{{this.productName}}</h4>
+            <h4>{{this.price}}</h4>
+            <form action="/whishlist-remove/{{this._id}}" method="POST">
+                <button class="retirer-button"> Retirer</button>
+
+            </form>
+        </div>
 
 
-</div>
-{{/each}}
+    </div>
+    {{/each}}
 
-{{else}}
-<hr class="wish-list-hr">
-<h1>Sorry you Must be Logged before seeing your wishList</h1>
-{{/if}}
+    {{else}}
+    <hr class="wish-list-hr">
+    <h1>Sorry you Must be Logged before seeing your wishList</h1>
+    {{/if}}
+</section>

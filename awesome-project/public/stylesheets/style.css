@@ -13,7 +13,8 @@ h4 {
 
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  color: #d8c9b6; }
+  color: #d8c9b6;
+  margin: 0; }
 
 .big-header {
   background-color: #061042; }
@@ -29,33 +30,40 @@ header {
   margin-bottom: 15px; }
 
 .connexion-form {
-  flex-direction: column; }
+  flex-direction: row;
+  align-items: center;
+  max-height: 3000px; }
 
 .login-form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: flex-end;
   justify-content: center;
   height: 60px;
   z-index: 111;
   display: none; }
+
+.email-form {
+  flex-direction: row;
+  align-items: flex-end; }
 
 .connexion-wishlist {
   padding-top: 7px;
   display: flex;
   align-items: center;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
+  min-width: 400px;
   width: 200px;
   margin-right: 25px; }
 
 .button-or-sign {
   display: flex;
   flex-direction: row;
-  border: 1px solid black;
   align-items: center;
   justify-content: space-around;
-  height: 20px; }
+  height: 20px;
+  width: 130px; }
 
 a {
   text-decoration: none;
@@ -126,7 +134,8 @@ footer {
   display: flex;
   flex-direction: column;
   margin-bottom: 0;
-  background-color: #061042; }
+  background-color: #061042;
+  width: 100%; }
 
 .top-footer {
   display: flex;
@@ -357,9 +366,7 @@ footer {
 
 .image-section-display {
   width: 400px;
-  height: 400px;
-  position: absolute;
-  left: 400px; }
+  height: 400px; }
 
 #big1 {
   z-index: 1;
@@ -463,6 +470,12 @@ footer {
   height: 40px;
   width: 300px;
   border-radius: 25px; }
+
+.wish-list-session {
+  min-height: 500px; }
+
+.wish-list-session h2 {
+  margin-left: 65px; }
 
 .big-wish-container {
   display: flex;

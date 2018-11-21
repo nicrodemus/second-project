@@ -15,30 +15,35 @@
     <header>
       <div class="language-div"><a href=""> 🇫🇷Francais</a></div>
       <div class="connexion-wishlist">
+        {{#if currentUser}}
+        <h2>{{currentUser.preNom}}</h2>
+        <a href="/logout">Log Out</a>
+        <a href="/wishList/{{currentUser._id}}"><i class="far fa-heart"></i></a>
+        {{else}}
         <div class="connexion-form">
+
           <p id="connexion" href="/connexion">Connexion</p>
           <div class="login-form" id="login">
-            <form action="/process-login" method="POST">
-              <label>
-                Email:
-                <input type="email" name="eMail" placeholder="gfcgk@rfgh.com">
-              </label>
-              <br><label>Password:
-                <input type="password" name="originalPassword" placeholder="it's a secret">
-              </label>
-              <br>
-              <div class="button-or-sign"><button>Log In</button>
-                <p>or</p> <a href="/signup">Sign Up</a>
-              </div>
+            <div class="email-form">
+              <form action="/process-login" method="POST">
+                <label>
+                  Email:
+                  <input type="email" name="eMail" placeholder="gfcgk@rfgh.com">
+            </div>
+            </label>
+            <br><label>Password:
+              <input type="password" name="originalPassword" placeholder="it's a secret">
+            </label>
+            <br>
+            <div class="button-or-sign"><button>Log In</button>
+              <p>or</p> <a href="/signup">Sign Up</a>
+            </div>
 
             </form>
 
           </div>
         </div>
-        {{#if currentUser}}
-        <h2>{{currentUser.preNom}}</h2>
-        <a href="/logout">Log Out</a>
-        <a href="/wishList/{{currentUser._id}}"><i class="far fa-heart"></i></a>
+
         {{/if}}
       </div>
 

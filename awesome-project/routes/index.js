@@ -231,7 +231,7 @@ router.get("/logout", (req, res, next) => {
 });
 
 //-----------------------  wishLIst routes-------------------------------////////////////
-router.get("/wishlist-add/:productId", (req, res, next) => {
+router.post("/wishlist-add/:productId", (req, res, next) => {
   const user = req.user._id;
   const { productId } = req.params;
   User.findByIdAndUpdate(
@@ -245,7 +245,7 @@ router.get("/wishlist-add/:productId", (req, res, next) => {
     .catch(err => next(err));
 });
 
-router.get("/whishlist-remove/:productId", (req, res, next) => {
+router.post("/whishlist-remove/:productId", (req, res, next) => {
   const user = req.user._id;
   const { productId } = req.params;
   User.findByIdAndUpdate(
@@ -255,7 +255,6 @@ router.get("/whishlist-remove/:productId", (req, res, next) => {
   )
     .then(userDoc => {
       // res.redirect(`/wishlist/${req.user._id}`);
-      // res.redirect(req.originalUrl);
       res.redirect("back");
     })
     .catch(err => next(err));

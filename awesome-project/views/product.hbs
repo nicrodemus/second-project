@@ -8,12 +8,9 @@
 
 
     <div class="three-images-section">
-        <img class="three-images-section-display" id="small-image-first" src="{{productItem.pictures.[0]}}"
-            alt="img" />
-        <img class="three-images-section-display" id="small-image-second" src="{{productItem.pictures.[1]}}"
-            alt="img" />
-        <img class="three-images-section-display" id="small-image-third" src="{{productItem.pictures.[2]}}"
-            alt="img" />
+        <img class="three-images-section-display" id="small-image-first" src="{{productItem.pictures.[0]}}" alt="img" />
+        <img class="three-images-section-display" id="small-image-second" src="{{productItem.pictures.[1]}}" alt="img" />
+        <img class="three-images-section-display" id="small-image-third" src="{{productItem.pictures.[2]}}" alt="img" />
     </div>
 
 
@@ -25,16 +22,17 @@
         <p class="productItem-price">{{productItem.price}}</p>
         <a href="/size-guide">Guide des Tailles</a>
         {{#if currentUser}}
-            {{#if isNotInWishlist}}
-            <form action="/wishlist-add/{{productItem._id}}" method="GET">
-                <button class="ajouter">AJOUTER À MA WISHLIST</button>
-            </form>
-            {{else}}
-            <form action="/whishlist-remove/{{productItem._id}}" method="GET">
-                <button class="remove">RETIRER DE MA WISHLIST</button>
-            </form>
+        {{#if isNotInWishlist}}
+        <form action="/wishlist-add/{{productItem._id}}" method="POST">
+            <button class="ajouter">AJOUTER À MA WISHLIST</button>
+        </form>
+        {{else}}
+        <form action="/whishlist-remove/{{productItem._id}}" method="POST">
+            <button class="remove">RETIRER DE MA WISHLIST</button>
+        </form>
 
-            {{/if}}
+        {{/if}}
+
         {{/if}}
     </div>
 </div>

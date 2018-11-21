@@ -6,35 +6,35 @@ document.addEventListener(
   false
 );
 /////------------------------ click function----------------------------/////
-var button = document.getElementById("a");
+var manArrow = document.getElementById("a");
 
-button.onclick = function() {
-  var div = document.getElementById("b");
-  if (div.style.display !== "none") {
-    div.style.display = "none";
+manArrow.onclick = function() {
+  var man = document.getElementById("b");
+  if (man.style.display !== "none") {
+    man.style.display = "none";
   } else {
-    div.style.display = "flex";
+    man.style.display = "flex";
   }
 };
 
-var button = document.getElementById("c");
+var womanArrow = document.getElementById("c");
 
-button.onclick = function() {
-  var div = document.getElementById("d");
-  if (div.style.display !== "none") {
-    div.style.display = "none";
+womanArrow.onclick = function() {
+  var woman = document.getElementById("d");
+  if (woman.style.display !== "none") {
+    woman.style.display = "none";
   } else {
-    div.style.display = "flex";
+    woman.style.display = "flex";
   }
 };
-var button = document.getElementById("connexion");
+var connection = document.getElementById("connexion");
 
-button.onclick = function() {
-  var div = document.getElementById("login");
-  if (div.style.display !== "none") {
-    div.style.display = "none";
+connection.onclick = function() {
+  var login = document.getElementById("login");
+  if (login.style.display !== "none") {
+    login.style.display = "none";
   } else {
-    div.style.display = "flex";
+    login.style.display = "flex";
   }
 };
 
@@ -49,27 +49,22 @@ image.forEach(oneImage => {
   };
 });
 
-var button = document.getElementById("sort-arrow");
-button.onclick = function() {
-  var div = document.getElementById("display-sort");
-  if (div.style.display !== "none") {
-    div.style.display = "none";
-  } else {
-    div.style.display = "flex";
-  }
-};
+// var arrow = document.querySelector("#sort-arrow");
+// var arrowDisplay = document.querySelector("#display-sort");
+// arrow.onclick = function() {
+//   if (arrowDisplay.style.display !== "none") {
+//     arrowDisplay.style.display = "none";
+//   } else {
+//     arrowDisplay.style.display = "flex";
+//   }
+// };
 
-var button = document.getElementById("filter-arrow");
-button.onclick = function() {
-  var div = document.getElementById("display-filter");
-  if (div.style.display !== "none") {
-    div.style.display = "none";
-  } else {
-    div.style.display = "flex";
-  }
-};
-
-// var click = document.querySelector(".ajouter")
-// click.onclick = function(){
-//   if()
-// }
+// var button1 = document.querySelector("#filter-arrow");
+// button.onclick = function() {
+//   var div1 = document.getElementById("#display-filter");
+//   if (div1.style.display !== "none") {
+//     div1.style.display = "none";
+//   } else {
+//     div1.style.display = "flex";
+//   }
+// };
