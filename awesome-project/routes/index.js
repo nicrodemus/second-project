@@ -152,15 +152,14 @@ router.get("/product/:productId", (req, res, next) => {
   const { productId } = req.params;
   Product.findById(productId)
     .then(productDoc => {
-      User.findById(req.user._id)
-        .then(userDoc => {
-          res.locals.isNotInWishlist = !userDoc.favourites.some(oneId => {
-            return oneId.toString() === productId;
-          });
-          res.locals.productItem = productDoc;
-          res.render("product.hbs");
-        })
-        .catch(err => next(err));
+      if (req.user) {
+        res.locals.isNotInWishlist = !req.user.favourites.some(oneId => {
+          return oneId.toString() === productId;
+        });
+      }
+
+      res.locals.productItem = productDoc;
+      res.render("product.hbs");
     })
     .catch(err => next(err));
 });
