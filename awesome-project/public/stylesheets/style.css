@@ -153,6 +153,14 @@ a {
   width: 150px;
   display: none; }
 
+.arrow-hover1:hover,
+.arrow-hover2:hover,
+.arrow-hover3:hover,
+.arrow-hover4:hover {
+  animation: shake 0.5s;
+  /* When the animation is finished, start again */
+  animation-iteration-count: 0.3; }
+
 .arrow-hover4 {
   margin-top: 15px; }
 
@@ -213,10 +221,18 @@ footer {
   background-image: url("../images/footer-apala-img.png");
   background-repeat: no-repeat; }
 
+.image-index {
+  background-image: url("../images/Group18.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 400px;
+  min-width: 99.8%;
+  border: 0; }
+
 .index-section {
   display: flex;
+  margin-top: 30px;
   justify-content: center;
-  align-items: center;
   flex-direction: column; }
 
 .newProducts-intro-title {
@@ -227,7 +243,9 @@ footer {
 .newProducts-intro-filters {
   display: flex;
   justify-content: space-around;
-  width: 60%;
+  margin-left: 435px;
+  margin-bottom: 20px;
+  width: 40%;
   height: 80%;
   color: #6e5c45; }
 
@@ -288,27 +306,55 @@ footer {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  cursor: pointer;
+  width: 150px;
+  margin-left: 45%; }
 
-.scroll-up p {
-  margin: 0; }
+.scroll-up:hover p,
+.scroll-up:hover i {
+  color: #d8c9b6; }
+
+.scroll-up p,
+.scroll-up i {
+  margin: 0;
+  color: #48433c; }
 
 .form-news-letter {
-  border: 1px solid black;
   height: 100px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center; }
 
-.news-letter-input {
-  border-radius: 25px 0 0 25px;
-  padding: 0;
-  height: 30px; }
+.form-news-letter-button {
+  color: white;
+  background-color: #958e87;
+  width: 300px;
+  height: 60px;
+  border-radius: 25px;
+  font-size: 25px;
+  position: relative;
+  transition: all 500ms ease;
+  cursor: pointer; }
 
-.news-letter-button {
-  border-radius: 0 25px 25px 0;
-  width: 70px;
-  height: 35px; }
+.form-news-letter-button:before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 15px;
+  width: 0px;
+  height: 60px;
+  background: rgba(149, 142, 135, 0.3);
+  border-radius: 100px;
+  transition: all 1s ease; }
+
+.form-news-letter-button:hover:before {
+  width: 95%; }
+
+.form-news-letter-button:hover {
+  animation: shake 0.5s;
+  /* When the animation is finished, start again */
+  animation-iteration-count: 1; }
 
 .man-woman-img {
   margin-top: 0;
@@ -407,16 +453,45 @@ footer {
   align-items: center;
   cursor: pointer; }
 
+.product-description-index0 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  color: #48433c; }
+
+.product-description-index1,
+.product-description-index1 a,
+.product-description-index0 a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #48433c; }
+
+.product-description-index1 a:hover,
+.product-description-index0 a:hover {
+  color: #d8c9b6; }
+
 .grid-product-man {
   max-width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   grid-gap: 2px;
   flex-wrap: wrap;
-  border: 1px solid black; }
+  border: 1px solid black;
+  margin-left: 20px; }
+
+.grid-product-man1 {
+  margin-left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
 
 .retour {
-  margin: 30px 0 30px 0; }
+  margin: 30px 0 30px 20px; }
+
+.retour a {
+  color: #48433c; }
 
 .product-section {
   display: flex;
@@ -469,7 +544,11 @@ footer {
   flex-direction: column;
   justify-content: space-around;
   text-align: center;
-  width: 400px; }
+  width: 400px;
+  color: #48433c; }
+
+.description-section a {
+  color: #958e87; }
 
 .productItem-productName {
   text-align: left; }
@@ -589,12 +668,13 @@ footer {
   min-height: 500px; }
 
 .wish-list-session h2 {
-  margin-left: 65px; }
+  margin-left: 65px;
+  color: #48433c; }
 
 .big-wish-container {
   display: flex;
   flex-direction: row;
-  height: 400px;
+  height: 300px;
   justify-content: space-between;
   align-items: center;
   margin-left: 50px; }
@@ -604,12 +684,13 @@ footer {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  color: #48433c;
   width: 800px;
   height: 150px; }
 
 .wishlist-picture {
-  height: 300px;
-  width: 300px; }
+  height: 250px;
+  width: 250px; }
 
 .wish-list-hr {
   width: 1370px; }
@@ -619,5 +700,32 @@ footer {
   width: 100px;
   background-color: #958e87;
   color: white; }
+
+.retirer-button:hover {
+  animation: shake 0.5s;
+  /* When the animation is finished, start again */
+  animation-iteration-count: 1; }
+
+.empty-list-message {
+  margin-top: 70px;
+  text-align: center;
+  color: #958e87;
+  font-size: 20px; }
+
+.information-button {
+  margin-top: 50px;
+  display: flex;
+  color: #958e87;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center; }
+
+.information-button button {
+  width: 200px;
+  height: 70px;
+  border-radius: 25px;
+  background-color: #958e87;
+  color: white;
+  font-size: 20px; }
 
 /*# sourceMappingURL=style.css.map */

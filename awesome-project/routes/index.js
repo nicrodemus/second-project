@@ -7,7 +7,14 @@ const passport = require("passport");
 //------------------------------------- HEADER ROUTER -------------------------------------------///////////////////////
 /* GET home page */
 router.get("/", (req, res, next) => {
-  res.render("index");
+  Product.find()
+    .sort({ createdAt: -1 })
+    .limit(4)
+    .then(productResults => {
+      res.locals.productArray = productResults;
+      res.render("index");
+    })
+    .catch(err => next(err));
 });
 
 router.get("/connexion", (req, res, next) => {

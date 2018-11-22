@@ -1,10 +1,15 @@
 <section class="wish-list-session">
+    <div class="retour">
+        <a href="javascript:history.back()"><i class="fas fa-caret-left"></i></a>
+        <a href="javascript:history.back()">RETOUR</a>
+    </div>
 
-    {{#if currentUser}}
+
     <h2>
         WELCOME BACK {{currentUser.preNom}}
 
     </h2>
+    {{#if favourites}}
     {{#each favourites }}
 
     <hr class="wish-list-hr" align="right">
@@ -24,9 +29,21 @@
 
     </div>
     {{/each}}
-
     {{else}}
-    <hr class="wish-list-hr">
-    <h1>Sorry you Must be Logged before seeing your wishList</h1>
+    <div class="empty-list-message">
+        <h1>
+            YOU DON'T HAVE ANY PRODUCTS <br> INSIDE THE WISHLIST
+        </h1>
+    </div>
+    <div class="information-button">
+        <form action="">
+            <button> click me</button>
+        </form>
+        <p>click to see our new products</p>
+    </div>
     {{/if}}
+
+
+
+
 </section>

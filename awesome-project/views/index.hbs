@@ -1,4 +1,7 @@
+<div class="image-index"></div>
+
 <section class="index-section">
+
     <div class="newProducts-intro-title">
         <h2>LES NOUVEAUTÉS</h2>
     </div>
@@ -24,15 +27,25 @@
             <i class="fas fa-sort-down"></i>
         </div>
     </div>
-    <div class="newProducts-intro-pictures">
-        {{!-- <img src="./public/images/myawesomepicture1.jpg" />
-        <img src="./public/images/myawesomepicture2.jpg" />
-        <img src="./public/images/myawesomepicture3.jpg" />
-        <img src="./public/images/myawesomepicture4.jpg" /> --}}
-        <div class=" image-index"></div>
-        <div class="image-index"></div>
-        <div class="image-index"></div>
-        <div class="image-index"></div>
+    <div class="grid-product-man1">
+
+
+
+
+        {{!-- <ul> --}}
+            {{#each productArray}}
+            <div class="product-index0">
+                <a href="/product/{{this._id}}">
+                    <img class="product-img-index0" src="{{this.pictures.[0]}}"></a>
+                <div class="product-description-index1">
+                    <a href="/product/{{this._id}}">{{this.productName}} </a>
+                    <p>{{this.price}}</p>
+                    <i class="far fa-heart"></i>
+                </div>
+
+            </div>
+            {{/each }}
+
     </div>
     <div class="newProducts-intro-welcome-message">
         <h2>Bienvenue dans la nouvelle boutique en ligne d’APALA, alliant éclat et charme <br> pour le plaisir de
@@ -60,19 +73,18 @@
             <p>Profitez d’Apala en vous abonnant à notre newsletter pour recevoir les dernières <br> nouvelles,
                 événements, promotions…</p>
             <div class="form-news-letter">
-                <form action="/subscribe-newsletter" method="POST">
-                    <label>
-                        <input class="news-letter-input" type="email" name="email" placeholder="Votre adresse mail..." />
-                    </label>
-                    <input type="button" class="news-letter-button" value="S'incrire"></input>
+                <form action="/subscribe-newsletter" method="GET">
+                    <button class="form-news-letter-button">S'incrire</button>
                 </form>
             </div>
         </div>
     </div>
-    <div class="scroll-up">
-        <a data-easing="linear" href="#bazinga"><i class="fas fa-sort-up"></i></a>
-        <p> RETOUR EN HAUT</p>
-    </div>
+    <a data-easing="linear" href="#bazinga">
+        <div class="scroll-up">
+            <i class="fas fa-sort-up"></i>
+            <p> RETOUR EN HAUT</p>
+        </div>
+    </a>
 </section>
 
 {{!--
