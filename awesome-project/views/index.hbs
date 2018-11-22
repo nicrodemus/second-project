@@ -59,16 +59,26 @@
             <h3>S'abonner à APALA</h3>
             <p>Profitez d’Apala en vous abonnant à notre newsletter pour recevoir les dernières <br> nouvelles,
                 événements, promotions…</p>
-            <form action="/subscribe-newsletter" method="POST">
-                <label>
-                    <input type="email" name="email" placeholder="Votre adresse mail..." />
-                </label>
-                <button>S'incrire</button>
-            </form>
+            <div class="form-news-letter">
+                <form action="/subscribe-newsletter" method="POST">
+                    <label>
+                        <input class="news-letter-input" type="email" name="email" placeholder="Votre adresse mail..." />
+                    </label>
+                    <input type="button" class="news-letter-button" value="S'incrire"></input>
+                </form>
+            </div>
         </div>
     </div>
     <div class="scroll-up">
-        <i class="fas fa-sort-up"></i>
+        <a data-easing="linear" href="#bazinga"><i class="fas fa-sort-up"></i></a>
         <p> RETOUR EN HAUT</p>
     </div>
 </section>
+
+{{!--
+<script>
+    var scroll = new SmoothScroll('a[href*="#"]', {
+        speed: 1000000000000000000000000000000,
+        speedAsDuration: true
+    });
+</script> --}}

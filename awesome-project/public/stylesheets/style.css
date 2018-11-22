@@ -1,3 +1,27 @@
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg); }
+  10% {
+    stransform: translate(-1px, -2px) rotate(-1deg); }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg); }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg); }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg); }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg); }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg); }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg); }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg); }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg); }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg); } }
+
 @font-face {
   font-family: "Palatino";
   src: url("../fonts/Palatino.ttc") format("ttc");
@@ -40,7 +64,8 @@ header {
 .connexion-form {
   flex-direction: row;
   align-items: center;
-  max-height: 3000px; }
+  max-height: 3000px;
+  cursor: pointer; }
 
 .login-form {
   display: flex;
@@ -268,6 +293,23 @@ footer {
 .scroll-up p {
   margin: 0; }
 
+.form-news-letter {
+  border: 1px solid black;
+  height: 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; }
+
+.news-letter-input {
+  border-radius: 25px 0 0 25px;
+  padding: 0;
+  height: 30px; }
+
+.news-letter-button {
+  border-radius: 0 25px 25px 0;
+  width: 70px;
+  height: 35px; }
+
 .man-woman-img {
   margin-top: 0;
   background-image: url("../images/background-image.png");
@@ -392,6 +434,12 @@ footer {
   width: 400px;
   height: 400px; }
 
+.image-section-display:hover {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 0.5s;
+  /* When the animation is finished, start again */
+  animation-iteration-count: 1; }
+
 #big1 {
   z-index: 1;
   display: block; }
@@ -409,6 +457,12 @@ footer {
   height: 125px;
   cursor: pointer;
   margin-top: 15px; }
+
+.three-images-section-display:hover {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 0.5s;
+  /* When the animation is finished, start again */
+  animation-iteration-count: 1; }
 
 .description-section {
   display: flex;
@@ -429,7 +483,24 @@ footer {
   font-size: 18px;
   border-radius: 30px;
   background-color: #061042;
+  position: relative;
+  box-sizing: border-box;
+  transition: all 500ms ease;
   color: #d8c9b6; }
+
+.ajouter:before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 0px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  transition: all 1s ease; }
+
+.ajouter:hover:before {
+  width: 100%; }
 
 .remove {
   height: 100px;
@@ -437,7 +508,26 @@ footer {
   font-size: 18px;
   border-radius: 30px;
   background-color: #958e87;
-  color: white; }
+  color: white;
+  transform-style: preserve-3d;
+  transition: all 500ms ease; }
+
+.remove:after {
+  top: -100%;
+  left: 0px;
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  background: #958e87;
+  border-radius: 30px;
+  content: " SOO SURE???";
+  transform-origin: left bottom;
+  transform: rotateX(90deg);
+  padding-top: 30px; }
+
+.remove:hover {
+  transform-origin: center bottom;
+  transform: rotateX(-90deg) translateY(100%); }
 
 .hr-section {
   width: 1100px;
