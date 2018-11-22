@@ -6,26 +6,35 @@
         <h2>LES NOUVEAUTÉS</h2>
     </div>
     <div class="newProducts-intro-filters">
+        <a href="/">
+            <div class="filter-all">
+                <p>Tous</p>
+                {{!-- <i class="fas fa-sort-down"></i> --}}
+            </div>
+        </a>
+        <a href="/filter-bracelets">
+            <div class="filter-all">
+                <p>Bracelets</p>
+                {{!-- <i class="fas fa-sort-down"></i> --}}
+            </div>
+        </a>
+        <a href="/filter-colliers">
+            <div class="filter-all">
+                <p>Colliers</p>
+                {{!-- <i class="fas fa-sort-down"></i> --}}
+            </div>
+        </a>
+        <a href="/filter-sautoirs">
+            <div class="filter-all">
+                <p>Sautoirs</p>
+                {{!-- <i class="fas fa-sort-down"></i> --}}
+            </div>
+        </a>
+        </a href="/filter-ephemeres">
         <div class="filter-all">
-            <p>Tous</p>
-            <i class="fas fa-sort-down"></i>
-        </div>
-        <div class="filter-all">
-            <p>Bracelets</p>
-            <i class="fas fa-sort-down"></i>
-        </div>
-        <div class="filter-all">
-            <p>Colliers</p>
-            <i class="fas fa-sort-down"></i>
-        </div>
-        <div class="filter-all">
-            <p>Sautoirs</p>
-            <i class="fas fa-sort-down"></i>
-        </div>
-        <div class="filter-all">
-            <p>Bagues</p>
-            <i class="fas fa-sort-down"></i>
-        </div>
+            <p>Ephemeres</p>
+            {{!-- <i class="fas fa-sort-down"></i> --}}
+        </div></a>
     </div>
     <div class="grid-product-man1">
 
@@ -62,8 +71,12 @@
     <div class="block-insta-and-newsletter-form">
 
         <div class="instagram-API-display">
-            <h3>>APALA sur Istagram</h3>
-            <div class="ista-post-img"></div>
+            <h3>APALA sur Istagram</h3>
+            <a href="https://www.instagram.com/apala_paris/">
+                <div class="ista-post-img"></div>
+
+
+            </a>
 
         </div>
 
@@ -73,7 +86,7 @@
             <p>Profitez d’Apala en vous abonnant à notre newsletter pour recevoir les dernières <br> nouvelles,
                 événements, promotions…</p>
             <div class="form-news-letter">
-                <form action="/subscribe-newsletter" method="GET">
+                <form action="/signup" method="GET">
                     <button class="form-news-letter-button">S'incrire</button>
                 </form>
             </div>

@@ -347,16 +347,19 @@ footer {
 .block-insta-and-newsletter-form {
   margin-top: 50px;
   width: 100%;
-  border: 1px solid black;
+  // border: 1px solid black;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   color: #48433c;
 }
 .ista-post-img {
-  width: 500px;
-  height: 100px;
-  border: 1px solid black;
+  width: 470px;
+  height: 190px;
+  // border: 1px solid black;
+  background-image: url("../images/insta-posts-images.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .newProducts-intro-welcome-message h2 {
   color: #48433c;
@@ -771,12 +774,23 @@ footer {
   align-items: center;
   height: 600px;
 }
+.button-s {
+  display: flex;
+  justify-content: center;
+}
 .sig {
   height: 70px;
 }
 .input {
   height: 40px;
   width: 300px;
+  border-radius: 25px;
+}
+#sign {
+  width: 150px;
+  height: 40px;
+  color: white;
+  background-color: #958e87;
   border-radius: 25px;
 }
 //---------------------------------------------    wish-list section///////////////---------
@@ -847,4 +861,10 @@ footer {
   background-color: #958e87;
   color: white;
   font-size: 20px;
+  cursor: pointer;
+}
+.information-button button:hover {
+  animation: shake 0.5s;
+  /* When the animation is finished, start again */
+  animation-iteration-count: 1;
 }

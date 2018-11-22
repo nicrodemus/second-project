@@ -122,6 +122,9 @@ router.get("/homme/sautoir", (req, res, next) => {
 router.get("/homme/costum", (req, res, next) => {
   res.render("template.hbs");
 });
+// router.get("/instagram", (req, res, next) => {
+//   res.redirect("www.instagram.com/apala_paris/");
+// });
 //////////---------------------------------------- FEMME ROUTER-----------------------------//////////////////////////
 router.get("/femme/collection", (req, res, next) => {
   Product.find({ gender: { $eq: "female" } })
@@ -272,6 +275,39 @@ router.post("/whishlist-remove/:productId", (req, res, next) => {
     .then(userDoc => {
       // res.redirect(`/wishlist/${req.user._id}`);
       res.redirect("back");
+    })
+    .catch(err => next(err));
+});
+/////////////------------------------ filter routes------------------------//////////////////
+router.get("/filter-bracelets", (req, res, next) => {
+  Product.find({ typeOfProduct: { $eq: "bracelet" } })
+    .sort({ createdAt: -1 })
+    .limit(4)
+    .then(productResults => {
+      res.locals.productArray = productResults;
+      res.render("index");
+    })
+    .catch(err => next(err));
+});
+
+router.get("/filter-colliers", (req, res, next) => {
+  Product.find({ typeOfProduct: { $eq: "collier" } })
+    .sort({ createdAt: -1 })
+    .limit(4)
+    .then(productResults => {
+      res.locals.productArray = productResults;
+      res.render("index");
+    })
+    .catch(err => next(err));
+});
+
+router.get("/filter-sautoirs", (req, res, next) => {
+  Product.find({ typeOfProduct: { $eq: "sautoir" } })
+    .sort({ createdAt: -1 })
+    .limit(4)
+    .then(productResults => {
+      res.locals.productArray = productResults;
+      res.render("index");
     })
     .catch(err => next(err));
 });
