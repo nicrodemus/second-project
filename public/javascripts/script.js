@@ -6,6 +6,18 @@ document.addEventListener(
   false
 );
 /////------------------------ click function----------------------------/////
+
+var image = document.querySelectorAll(".three-images-section-display");
+console.log("images", image);
+var bigImage = document.querySelector(".image-section-display");
+console.log("bigimage", bigImage);
+
+image.forEach(oneImage => {
+  oneImage.onclick = () => {
+    bigImage.src = oneImage.src;
+  };
+});
+
 var button = document.getElementById("a");
 
 button.onmouseover = function() {
@@ -35,6 +47,7 @@ button.onmouseout = function() {
 //     div.style.display = "flex";
 //   }
 // };
+
 var button = document.getElementById("connexion");
 
 button.onclick = function() {
@@ -45,17 +58,6 @@ button.onclick = function() {
     div.style.display = "flex";
   }
 };
-
-var image = document.querySelectorAll(".three-images-section-display");
-console.log("images", image);
-var bigImage = document.querySelector(".image-section-display");
-console.log("bigimage", bigImage);
-
-image.forEach(oneImage => {
-  oneImage.onclick = () => {
-    bigImage.src = oneImage.src;
-  };
-});
 
 var button = document.getElementById("sort-arrow");
 button.onclick = function() {

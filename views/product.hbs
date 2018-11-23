@@ -6,7 +6,7 @@
 <div class="product-section">
 
 
-
+    {{#if currentUser}}
     <div class="three-images-section">
         <img class="three-images-section-display" id="small-image-first" src="{{productItem.pictures.[0]}}" alt="img" />
         <img class="three-images-section-display" id="small-image-second" src="{{productItem.pictures.[1]}}" alt="img" />
@@ -21,7 +21,7 @@
         <h1 class="productItem-productName">{{productItem.productName}}</h1>
         <p class="productItem-price">{{productItem.price}}</p>
         <a href="/images/MESUREUR-DE-POIGNET_APALA.jpg" download>Guide des Tailles</a>
-        {{#if currentUser}}
+
         {{#if isNotInWishlist}}
         <form action="/wishlist-add/{{productItem._id}}" method="POST">
             <button class="ajouter">AJOUTER À MA WISHLIST</button>
@@ -33,29 +33,56 @@
 
         {{/if}}
 
-        {{/if}}
+        {{else}}
+        <div class="three-images-section">
+            <img class="three-images-section-display" id="small-image-first" src="{{productItem.pictures.[0]}}" alt="img" />
+            <img class="three-images-section-display" id="small-image-second" src="{{productItem.pictures.[1]}}" alt="img" />
+            <img class="three-images-section-display" id="small-image-third" src="{{productItem.pictures.[2]}}" alt="img" />
+        </div>
+
+
+        <div class="image-section">
+            <img class="image-section-display" id="big1" src="{{productItem.pictures.[0]}}" alt="img" />
+        </div>
+        <div class="description-section">
+            <h1 class="productItem-productName">{{productItem.productName}}</h1>
+            <p class="productItem-price">{{productItem.price}}</p>
+            <a href="/images/MESUREUR-DE-POIGNET_APALA.jpg" download>Guide des Tailles</a>
+
+            {{#if isNotInWishlist}}
+            <form action="/wishlist-add/{{productItem._id}}" method="POST">
+                <button class="ajouter">AJOUTER À MA WISHLIST</button>
+            </form>
+            {{else}}
+            <form action="/whishlist-remove/{{productItem._id}}" method="POST">
+                <button class="remove">RETIRER DE MA WISHLIST</button>
+            </form>
+
+            {{/if}}
+
+            {{/if}}
+        </div>
     </div>
-</div>
-<hr class="hr-section">
-<div class="section-pierres">
-    <h3> LES PIERRES UTILISÉES</h3>
-</div>
-<div class="a">
-    {{#each productItem }}
-    <div class="this-picture-stones">
-        {{#each stones.[1].img}}
-        <div class="this-picture"> <img src="{{this}}"> </div>
-        {{/each}}
-
+    <hr class="hr-section">
+    <div class="section-pierres">
+        <h3> LES PIERRES UTILISÉES</h3>
     </div>
-    <div class="this-stones ">
+    <div class="a">
+        {{#each productItem }}
+        <div class="this-picture-stones">
+            {{#each stones.[1].img}}
+            <div class="this-picture"> <img src="{{this}}"> </div>
+            {{/each}}
+
+        </div>
+        <div class="this-stones ">
 
 
 
-        {{#each stones.[0].name}}
-        <div class="this">{{this}}</div>
-        {{/each}}
+            {{#each stones.[0].name}}
+            <div class="this">{{this}}</div>
+            {{/each}}
 
+        </div>
     </div>
-</div>
-{{/each}}
+    {{/each}}
