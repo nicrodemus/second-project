@@ -49,16 +49,6 @@
             <p class="productItem-price">{{productItem.price}}</p>
             <a href="/images/MESUREUR-DE-POIGNET_APALA.jpg" download>Guide des Tailles</a>
 
-            {{#if isNotInWishlist}}
-            <form action="/wishlist-add/{{productItem._id}}" method="POST">
-                <button class="ajouter">AJOUTER À MA WISHLIST</button>
-            </form>
-            {{else}}
-            <form action="/whishlist-remove/{{productItem._id}}" method="POST">
-                <button class="remove">RETIRER DE MA WISHLIST</button>
-            </form>
-
-            {{/if}}
 
             {{/if}}
         </div>
