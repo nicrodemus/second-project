@@ -15,7 +15,7 @@ require("./passport/passport-set-up");
 
 mongoose
   .connect(
-    "mongodb://localhost/awesome-project",
+    process.env.MONGODB_URI,
     { useNewUrlParser: true }
   )
   .then(x => {

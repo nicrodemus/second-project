@@ -3,36 +3,36 @@
 <section class="index-section">
 
     <div class="newProducts-intro-title">
-        <h2>LES NOUVEAUTÉS</h2>
+        <h2 id="da">LES NOUVEAUTÉS</h2>
     </div>
     <div class="newProducts-intro-filters">
-        <a href="/">
+        <a href="/#da">
             <div class="filter-all">
                 <p>Tous</p>
                 {{!-- <i class="fas fa-sort-down"></i> --}}
             </div>
         </a>
-        <a href="/filter-bracelets">
+        <a href="/filter-bracelets#da">
             <div class="filter-all">
-                <p>Bracelets</p>
+                <p id="ca">Bracelets</p>
                 {{!-- <i class="fas fa-sort-down"></i> --}}
             </div>
         </a>
-        <a href="/filter-colliers">
+        <a href="/filter-colliers#da">
             <div class="filter-all">
-                <p>Colliers</p>
+                <p id="ba">Colliers</p>
                 {{!-- <i class="fas fa-sort-down"></i> --}}
             </div>
         </a>
-        <a href="/filter-sautoirs">
+        <a href="/filter-sautoirs#da">
             <div class="filter-all">
-                <p>Sautoirs</p>
+                <p id="ea">Sautoirs</p>
                 {{!-- <i class="fas fa-sort-down"></i> --}}
             </div>
         </a>
         </a href="/filter-ephemeres">
         <div class="filter-all">
-            <p>Ephemeres</p>
+            <p>Ephemers</p>
             {{!-- <i class="fas fa-sort-down"></i> --}}
         </div></a>
     </div>
@@ -42,14 +42,15 @@
 
 
         {{!-- <ul> --}}
+
             {{#each productArray}}
-            <div class="product-index0">
+            <div class="product-index1">
                 <a href="/product/{{this._id}}">
                     <img class="product-img-index0" src="{{this.pictures.[0]}}"></a>
                 <div class="product-description-index1">
                     <a href="/product/{{this._id}}">{{this.productName}} </a>
                     <p>{{this.price}}</p>
-                    <i class="far fa-heart"></i>
+
                 </div>
 
             </div>
@@ -60,8 +61,10 @@
         <h2>Bienvenue dans la nouvelle boutique en ligne d’APALA, alliant éclat et charme <br> pour le plaisir de
             porter ses
             bijoux ou bien de les offrir.</h2>
+
     </div>
     <hr class=" hr-index">
+
     <div class="newProducts-intro-catch-phrase">
         <p>Nos créations vous habilleront totalement… ou presque.</p>
     </div>

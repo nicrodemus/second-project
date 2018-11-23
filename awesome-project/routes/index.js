@@ -8,8 +8,9 @@ const passport = require("passport");
 /* GET home page */
 router.get("/", (req, res, next) => {
   Product.find()
-    .sort({ createdAt: -1 })
-    .limit(4)
+    .sort({ createdAt: 1 })
+    // .limit(4)
+    .skip(5)
     .then(productResults => {
       res.locals.productArray = productResults;
       res.render("index");
@@ -92,6 +93,7 @@ router.get("/contacts", (req, res, next) => {
 router.get("/homme/collection", (req, res, next) => {
   Product.find({ gender: { $eq: "male" } })
     .then(productResults => {
+      res.locals.isMale = true;
       res.locals.productArray = productResults;
       res.render("template.hbs");
     })
@@ -105,6 +107,7 @@ router.get("/homme/collection", (req, res, next) => {
 router.get("/homme/bracelets", (req, res, next) => {
   Product.find({ typeOfProduct: { $eq: "bracelet" }, gender: { $eq: "male" } })
     .then(productResults => {
+      res.locals.isMale = true;
       res.locals.productArray = productResults;
       res.render("template.hbs");
     })
@@ -113,6 +116,7 @@ router.get("/homme/bracelets", (req, res, next) => {
 router.get("/homme/sautoir", (req, res, next) => {
   Product.find({ typeOfProduct: { $eq: "sautoir" }, gender: { $eq: "male" } })
     .then(productResults => {
+      res.locals.isMale = true;
       res.locals.productArray = productResults;
       res.render("template.hbs");
     })
@@ -129,6 +133,7 @@ router.get("/homme/costum", (req, res, next) => {
 router.get("/femme/collection", (req, res, next) => {
   Product.find({ gender: { $eq: "female" } })
     .then(productResults => {
+      res.locals.isMale = false;
       res.locals.productArray = productResults;
       res.render("template.hbs");
     })
@@ -140,6 +145,8 @@ router.get("/femme/bracelets", (req, res, next) => {
     gender: { $eq: "female" }
   })
     .then(productResults => {
+      res.locals.isMale = false;
+      console.log(productResults);
       res.locals.productArray = productResults;
       res.render("template.hbs");
     })
@@ -148,6 +155,7 @@ router.get("/femme/bracelets", (req, res, next) => {
 router.get("/femme/sautoir", (req, res, next) => {
   Product.find({ typeOfProduct: { $eq: "sautoir" }, gender: { $eq: "female" } })
     .then(productResults => {
+      res.locals.isMale = false;
       res.locals.productArray = productResults;
       res.render("template.hbs");
     })
@@ -160,6 +168,7 @@ router.get("/femme/costum", (req, res, next) => {
 router.get("/femme/rasDuCol", (req, res, next) => {
   Product.find({ typeOfProduct: { $eq: "collier" }, gender: { $eq: "female" } })
     .then(productResults => {
+      res.locals.isMale = false;
       res.locals.productArray = productResults;
       res.render("template.hbs");
     })
@@ -282,7 +291,7 @@ router.post("/whishlist-remove/:productId", (req, res, next) => {
 router.get("/filter-bracelets", (req, res, next) => {
   Product.find({ typeOfProduct: { $eq: "bracelet" } })
     .sort({ createdAt: -1 })
-    .limit(4)
+    // .limit(4)
     .then(productResults => {
       res.locals.productArray = productResults;
       res.render("index");
@@ -293,7 +302,7 @@ router.get("/filter-bracelets", (req, res, next) => {
 router.get("/filter-colliers", (req, res, next) => {
   Product.find({ typeOfProduct: { $eq: "collier" } })
     .sort({ createdAt: -1 })
-    .limit(4)
+    // .limit(4)
     .then(productResults => {
       res.locals.productArray = productResults;
       res.render("index");
@@ -304,7 +313,7 @@ router.get("/filter-colliers", (req, res, next) => {
 router.get("/filter-sautoirs", (req, res, next) => {
   Product.find({ typeOfProduct: { $eq: "sautoir" } })
     .sort({ createdAt: -1 })
-    .limit(4)
+    // .limit(4)
     .then(productResults => {
       res.locals.productArray = productResults;
       res.render("index");

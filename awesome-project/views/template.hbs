@@ -2,8 +2,12 @@
 
     <div class="box">
 
-        <h1> </h1>
+        {{#if isMale}}
 
+        <h1 class="gender"> HOMME</h1>
+        {{else}}
+        <h1 class="gender"> FEMME</h1>
+        {{/if}}
     </div>
 
 
@@ -98,7 +102,7 @@
             <div class="product-description-index0">
                 <a href="/product/{{this._id}}">{{this.productName}} </a>
                 <p>{{this.price}}</p>
-                <i class="far fa-heart"></i>
+
             </div>
 
         </div>

@@ -9,12 +9,15 @@ const productSchema = new Schema(
     price: String,
     // collection: String,
     stones: Array,
-    gender: String,
+    gender: { type: String, enum: ["male", "female"] },
     color: Array
   },
   {
     timestamps: true
   }
 );
+productSchema.virtual("isMan").get(function() {
+  return this.gender === "male";
+});
 const Product = mongoose.model("Product", productSchema);
 module.exports = Product;

@@ -16,7 +16,7 @@
       <div class="language-div"><a id="bazinga" href=""> 🇫🇷Francais</a></div>
       <div class="connexion-wishlist">
         {{#if currentUser}}
-        <h2>{{currentUser.preNom}}</h2>
+        <h2 class="current-user-prenom">{{currentUser.preNom}}</h2>
         <a href="/logout">Log Out</a>
         <a href="/wishList/{{currentUser._id}}"><i class="far fa-heart"></i></a>
         {{else}}
@@ -59,41 +59,41 @@
     </div>
     <div class="sub-header">
       <div class="arrow-hover arrow-hover1">
-        <a class="maison-apala" href="/">maison apala</a>
+        <a class="maison-apala" href="/">LA MAISON</a>
 
       </div>
 
-      <div class="arrow-hover arrow-hover2">
-        <p href="" id="a"> homme</p>
+      <div class="arrow-hover arrow-hover2" id="a">
+        <p href=""> HOMME</p>
         <div class=" arrow arrow2" id="b"> <i class="fas fa-sort-up"></i>
-          <a href="/homme/collection">Collection</a>
+          <a href="/homme/collection">COLLECTION</a>
           <hr>
-          <a href="/homme/bracelets">Bracelets</a>
+          <a href="/homme/bracelets">BRACELETS</a>
           <hr>
-          <a href="/homme/sautoir">Sautoir</a>
+          <a href="/homme/sautoir">SAUTOIR</a>
           <hr>
-          <a href="/homme/costum">Costum</a>
+          <a href="/homme/costum">CUSTOM</a>
         </div>
 
       </div>
-      <div class="arrow-hover arrow-hover3">
-        <p id="c" href="">femme</p>
+      <div class="arrow-hover arrow-hover3" id="c">
+        <p href="">FEMME</p>
         <div class="arrow arrow3" id="d"><i class="fas fa-sort-up"></i>
-          <a href="/femme/collection">Collection</a>
+          <a href="/femme/collection">COLLECTION</a>
           <hr>
-          <a href="/femme/bracelets">Bracelets</a>
+          <a href="/femme/bracelets">BRACELETS</a>
           <hr>
-          <a href="/femme/sautoir">Sautoir</a>
+          <a href="/femme/sautoir">SAUTOIR</a>
           <hr>
-          <a href="/femme/costum">Costum</a>
+          <a href="/femme/costum">COSTUM</a>
           <hr>
-          <a href="/femme/rasDuCol">Ras du col</a>
+          <a href="/femme/rasDuCol">RAS DU COL</a>
         </div>
       </div>
-      <div class="arrow-hover4"><a class="les-ephemeris" href="">les ephemeris</a><i class="fas fa-sort-up"></i>
+      <div class="arrow-hover4"><a class="les-ephemeris" href="">LES ÉPHÉMÈRES</a><i class="fas fa-sort-up"></i>
 
       </div>
-      <div class="arrow-hover5"><a href="">cadeaux</a><i class="fas fa-sort-up"></i>
+      <div class="arrow-hover5"><a href="">SUR MESURE</a><i class="fas fa-sort-up"></i>
       </div>
     </div>
   </section>

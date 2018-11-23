@@ -1,9 +1,11 @@
+require("dotenv").config();
+
 const mongoose = require("mongoose");
 const Product = require("../models/product-model.js");
 
 mongoose
   .connect(
-    "mongodb://localhost/awesome-project",
+    process.env.MONGODB_URI,
     { useNewUrlParser: true }
   )
   .then(x => {

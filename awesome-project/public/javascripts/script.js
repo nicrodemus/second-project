@@ -8,25 +8,33 @@ document.addEventListener(
 /////------------------------ click function----------------------------/////
 var button = document.getElementById("a");
 
-button.onclick = function() {
+button.onmouseover = function() {
   var div = document.getElementById("b");
-  if (div.style.display !== "none") {
-    div.style.display = "none";
-  } else {
-    div.style.display = "flex";
-  }
+  div.style.display = "flex";
+};
+button.onmouseout = function() {
+  var div = document.getElementById("b");
+  div.style.display = "none";
 };
 
 var button = document.getElementById("c");
 
-button.onclick = function() {
+button.onmouseover = function() {
   var div = document.getElementById("d");
-  if (div.style.display !== "none") {
-    div.style.display = "none";
-  } else {
-    div.style.display = "flex";
-  }
+  div.style.display = "flex";
 };
+
+button.onmouseout = function() {
+  var div = document.getElementById("d");
+  div.style.display = "none";
+};
+//   var div = document.getElementById("d");
+//   if (div.style.display !== "none") {
+//     div.style.display = "none";
+//   } else {
+//     div.style.display = "flex";
+//   }
+// };
 var button = document.getElementById("connexion");
 
 button.onclick = function() {
