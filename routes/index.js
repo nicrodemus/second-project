@@ -77,7 +77,6 @@ router.get("/wishList/:userId", (req, res, next) => {
 router.get("/question", (req, res, next) => {
   res.render("footer-views/question");
 });
-module.exports = router;
 
 router.get("/conditions-generales", (req, res, next) => {
   res.render("general-conditions.hbs");

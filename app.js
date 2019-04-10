@@ -14,10 +14,7 @@ const passport = require("passport");
 require("./passport/passport-set-up");
 
 mongoose
-  .connect(
-    process.env.MONGODB_URI,
-    { useNewUrlParser: true }
-  )
+  .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
   .then(x => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
